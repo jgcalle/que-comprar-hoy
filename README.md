@@ -1,4 +1,5 @@
-API RESTful “Que tengo que comprar hoy?” v1.0
+API RESTful
+“Que tengo que comprar hoy?” v1.0
 =============================================
 
 La API “Que tengo que comprar hoy?” proporciona recursos para la gestión de listas de la compra pertenecientes a usuarios.
