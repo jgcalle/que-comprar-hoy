@@ -1,0 +1,4 @@
+@(lista: Lista)
+<lista lista_id="@lista.id">
+	<name>@lista.name</name>	
+</lista>

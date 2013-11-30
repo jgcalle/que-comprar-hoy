@@ -1,0 +1,22 @@
+@(lista: Lista)
+{
+	"id": "@lista.id",
+	"name": "@lista.name",
+	"createdat": "@lista.createdAt",
+	"users": [
+		@for((user,index) <- lista.myUsers.zipWithIndex){
+			@_lista_usuario(user)
+    		@if(index != (lista.myUsers.size - 1)){
+        		,
+    		}			
+		}  		
+	],
+	"articulos": [	
+		@for(index_articulo <- 0 until lista.myItems.size){
+			@_articulo(lista.myItems(index_articulo))
+    		@if(index_articulo != (lista.myItems.size - 1)){
+        		,
+    		}
+		}		
+	]	
+}	

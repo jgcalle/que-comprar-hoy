@@ -1,0 +1,10 @@
+@(usuario: Usuario)
+<usuario id="@usuario.id">
+	<nickname>@usuario.nickName</nickname>
+	<email>@usuario.email</email>
+	<listas>
+	@for(lista <- usuario.myLists){
+		@_usuario_lista(lista)
+	}	
+	</listas>
+</usuario>

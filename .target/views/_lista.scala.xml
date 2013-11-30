@@ -1,0 +1,15 @@
+@(lista: Lista)
+<lista lista_id="@lista.id">
+	<name>@lista.name</name>
+	<createdat>@lista.createdAt</createdat>
+	<users>
+	@for(user <- lista.myUsers){
+		@_lista_usuario(user)
+	}	
+	</users>	
+	<articulos>
+	@for(articulo <- lista.myItems){
+		@_articulo(articulo)
+	}	
+	</articulos>	
+</lista>

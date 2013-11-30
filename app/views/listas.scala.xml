@@ -1,0 +1,6 @@
+@(listas:List[Lista])
+<listas>
+	@for(lista <- listas){
+		@_lista(lista)
+	}
+</listas>

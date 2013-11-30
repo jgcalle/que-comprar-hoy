@@ -1,0 +1,6 @@
+@(articulo: Articulo)
+{
+	"id": "@articulo.id",
+	"name": "@articulo.name",
+	"amount": "@articulo.amount"
+}

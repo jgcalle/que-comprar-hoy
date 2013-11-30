@@ -1,0 +1,31 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Authentication
+POST 	/api/1.0/login 													controllers.Application.login()
+GET 	/api/1.0/logout 												controllers.Application.logout()
+
+# Operaciones sobre usuarios
+GET     /api/1.0/usuarios      											controllers.Usuarios.readAll(page:Integer ?= 0)
+GET     /api/1.0/usuarios/$userId<[0-9]*>       						controllers.Usuarios.read(userId: Long)
+POST    /api/1.0/usuarios			        							controllers.Usuarios.create()
+PUT     /api/1.0/usuarios/$userId<[0-9]*>								controllers.Usuarios.update(userId: Long)
+DELETE  /api/1.0/usuarios/$userId<[0-9]*>								controllers.Usuarios.delete(userId: Long)
+
+# Operaciones sobre listas
+POST   	/api/1.0/listas  												controllers.Listas.create()
+GET   	/api/1.0/listas 												controllers.Listas.readAll(listName:String ?= "", page:Integer ?= 0)
+GET 	/api/1.0/listas/$listId<[0-9]*> 								controllers.Listas.read(listId: Long)
+DELETE 	/api/1.0/listas/$listId<[0-9]*> 								controllers.Listas.delete(listId: Long)
+
+# Operaciones compartir listas
+PUT		/api/1.0/listas/$listId<[0-9]*>/usuarios/$userId<[0-9]*>		controllers.Listas.share(listId: Long, userId: Long)
+DELETE  /api/1.0/listas/$listId<[0-9]*>/usuarios/$userId<[0-9]*>		controllers.Listas.shareNot(listId: Long, userId: Long)
+
+# Operaciones sobre articulos
+POST   	/api/1.0/listas/$listId<[0-9]*>/articulos						controllers.Articulos.create(listId: Long)
+DELETE 	/api/1.0/articulos/$itemId<[0-9]*>								controllers.Articulos.delete(itemId: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /api/1.0/assets/*file               							controllers.Assets.at(path="/public", file)

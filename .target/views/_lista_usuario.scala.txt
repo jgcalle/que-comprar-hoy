@@ -1,0 +1,5 @@
+@(usuario: Usuario)
+{
+	"id": "@usuario.id",
+	"nickname": "@usuario.nickName"
+}

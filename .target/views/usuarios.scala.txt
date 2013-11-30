@@ -1,0 +1,11 @@
+@(usuarios: List[Usuario])
+{
+	"usuarios": [
+		@for(index <- 0 until usuarios.size){
+			@_usuario(usuarios(index))
+    		@if(index != (usuarios.size - 1)){
+        		,
+    		}
+		}
+	]
+}

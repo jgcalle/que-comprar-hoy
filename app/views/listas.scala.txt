@@ -1,0 +1,11 @@
+@(listas: List[Lista])
+{
+	"listas": [		
+		@for(index <- 0 until listas.size){
+			@_lista(listas(index))
+    		@if(index != (listas.size - 1)){
+        		,
+    		}
+		}		
+	]
+}

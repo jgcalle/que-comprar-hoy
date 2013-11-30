@@ -1,0 +1,5 @@
+@(lista: Lista)
+{
+	"id": "@lista.id",
+	"name": "@lista.name"
+}	

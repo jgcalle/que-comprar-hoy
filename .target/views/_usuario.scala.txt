@@ -1,0 +1,14 @@
+@(usuario: Usuario)
+{
+	"id": "@usuario.id",
+	"nickname": "@usuario.nickName",
+	"email": "@usuario.email",
+	"listas": [
+		@for(index <- 0 until usuario.myLists.size){
+			@_usuario_lista(usuario.myLists(index))
+    		@if(index != (usuario.myLists.size - 1)){
+        		,
+    		}
+		}		
+	]
+}

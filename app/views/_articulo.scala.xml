@@ -1,0 +1,5 @@
+@(articulo: Articulo)
+<articulo articulo_id="@articulo.id">
+	<name>@articulo.name</name>
+	<amount>@articulo.amount</amount>
+</articulo>
